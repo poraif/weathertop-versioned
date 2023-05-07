@@ -1,0 +1,44 @@
+
+<div class="tile is-ancestor is-info">
+    <div class="tile is-parent">
+        <article class="tile is-child notification is-success">
+            <p class="title">${_station.name}</p>
+            <p class="subtitle">Lat: ${_station.lat}</p>
+            <p class="subtitle">Lng: ${_station.lng}</p>
+            <span class="icon is-large is-right">
+          <span class="fa-stack fa-2x is-right">
+            <i class="fa fa-map-marker" aria-hidden="true" fa-stack-1x"></i>
+          </span>
+        </span>
+        </article>
+    </div>
+    #{list items:_station.latestReadings(), as:'reading'}
+    <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+            <p class="title">Weather</p>
+            <p class="subtitle">${reading.convertWeatherCode(reading.code)}</p>
+        </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+            <p class="title">Temp</p>
+            <p class="subtitle">  ${reading.temperature} C</p>
+            <p class="subtitle"> ${reading.celsiusToFahrenheit(reading.temperature)} F</p>
+        </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+            <p class="title">Wind</p>
+            <p class="subtitle">  ${reading.returnBeaufort(reading.windSpeed)} bft</p>
+            <p class="subtitle">${reading.getCompassDirection(reading.windDirection)}</p>
+            <p class="subtitle">Feels like ${reading.calcWindChill(reading.windSpeed, reading.temperature)} C</p>
+        </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+            <p class="title">Pressure</p>
+            <p class="subtitle">  ${reading.pressure} hPa </p>
+        </article>
+    </div>
+    #{/list}
+</div>
