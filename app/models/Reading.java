@@ -21,6 +21,8 @@ public class Reading extends Model
 
     public String dateTime;
 
+    public double value;
+
 
 
     public Reading (int code, double temperature, double windSpeed,int windDirection, int pressure)
@@ -168,7 +170,10 @@ public class Reading extends Model
 
     public static double calcWindChill (double windSpeed, double temperature) {
         double i = Math.pow(windSpeed, 0.16);
-        return (13.12 + (0.6215 * temperature) - (11.37 * i) + ((0.3965 * temperature) * i));
+        return (Math.round((13.12 + (0.6215 * temperature) - (11.37 * i) + ((0.3965 * temperature) * i))*100)/100.0);
     }
+
+
+
 }
 
