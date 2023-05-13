@@ -65,9 +65,16 @@ Member(m1):
   firstname: Brick
   lastname: Tamland
   email: brick.tambland@example.ie
-  password: password123
+  password: abcd
   stations:
     - s1
     - s2
 
+Member(m2):
+  firstname: Bruce
+  lastname: Nolan
+  email: bruce.nolan@example.ie
+  password: 1234
+  stations:
+    - s3
 

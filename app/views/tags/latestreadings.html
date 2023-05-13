@@ -2,9 +2,9 @@
 <div class="tile is-ancestor is-info">
     <div class="tile is-parent">
         <article class="tile is-child notification is-success">
-            <p class="title">${_station.name}</p>
-            <p class="subtitle">Lat: ${_station.lat}</p>
-            <p class="subtitle">Lng: ${_station.lng}</p>
+            <p class="title is-3">${_station.name}</p>
+            <p class="subtitle is-6">Lat: ${_station.lat}</p>
+            <p class="subtitle is-6">Lng: ${_station.lng}</p>
             <span class="icon is-large is-right">
           <span class="fa-stack fa-2x is-right">
             <i class="fa fa-map-marker" aria-hidden="true" fa-stack-1x"></i>
@@ -15,29 +15,35 @@
     #{list items:_station.latestReadings(), as:'reading'}
     <div class="tile is-parent">
         <article class="tile is-child notification is-info">
-            <p class="title">Weather</p>
-            <p class="subtitle">${reading.convertWeatherCode(reading.code)}</p>
+            <p class="title is-3">Weather</p>
+            <p class="subtitle is-6">${reading.convertWeatherCode(reading.code)}</p>
         </article>
     </div>
     <div class="tile is-parent">
         <article class="tile is-child notification is-info">
-            <p class="title">Temp</p>
-            <p class="subtitle">  ${reading.temperature} C</p>
-            <p class="subtitle"> ${reading.celsiusToFahrenheit(reading.temperature)} F</p>
+            <p class="title is-3">Temp</p>
+            <p class="subtitle is-6">  ${reading.temperature} C</p>
+            <p class="subtitle is-6"> ${reading.celsiusToFahrenheit(reading.temperature)} F</p>
+            <p class="subtitle is-6"> Max: </p>
+            <p class="subtitle is-6"> Min: </p>
         </article>
     </div>
     <div class="tile is-parent">
         <article class="tile is-child notification is-info">
-            <p class="title">Wind</p>
-            <p class="subtitle">  ${reading.returnBeaufort(reading.windSpeed)} bft</p>
-            <p class="subtitle">${reading.getCompassDirection(reading.windDirection)}</p>
-            <p class="subtitle">Feels like ${reading.calcWindChill(reading.windSpeed, reading.temperature)} C</p>
+            <p class="title is-3">Wind</p>
+            <p class="subtitle is-6">  ${reading.returnBeaufort(reading.windSpeed)} bft</p>
+            <p class="subtitle is-6">${reading.getCompassDirection(reading.windDirection)}</p>
+            <p class="subtitle is-6">Feels like ${reading.calcWindChill(reading.windSpeed, reading.temperature)} C</p>
+            <p class="subtitle is-6"> Max: </p>
+            <p class="subtitle is-6"> Min: </p>
         </article>
     </div>
     <div class="tile is-parent">
         <article class="tile is-child notification is-info">
-            <p class="title">Pressure</p>
-            <p class="subtitle">  ${reading.pressure} hPa </p>
+            <p class="title is-3">Pressure</p>
+            <p class="subtitle is-6">  ${reading.pressure} hPa </p>
+            <p class="subtitle is-6"> Max: </p>
+            <p class="subtitle is-6"> Min: </p>
         </article>
     </div>
     #{/list}
