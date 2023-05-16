@@ -20,6 +20,19 @@ public class Station extends Model
 
     public double lng;
 
+    public int minPressure;
+
+    public int maxPressure;
+
+    public double minTemperature;
+
+    public double maxTemperature;
+
+    public double minWindSpeed;
+
+    public double maxWindSpeed;
+
+
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
@@ -29,18 +42,8 @@ public class Station extends Model
         this.name = name;
         this.lat = lat;
         this.lng = lng;
-
     }
-/*
-   public List<Reading> getLatestReadings() {
-         List<Reading> latestReading = null;
-	//	latestReading = readings.get(readings.size()-1);
-     if(readings.size() > 0) {
-       latestReading = readings.subList(readings.size() - 1, readings.size());
-     }
-        return latestReading;
-   }
-*/
+
   public List<Reading> latestReadings() {
     List<Reading> latestReadings = null;
     if (readings.size() > 0) {
