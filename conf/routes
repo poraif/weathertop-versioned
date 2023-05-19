@@ -13,8 +13,10 @@ POST    /stations/{id}/addreading                       StationCtrl.addReading
 POST    /dashboard/addstation                           Dashboard.addStation
 GET    /signup                                          Accounts.signup
 GET    /login                                           Accounts.login
+GET    /update                                          Accounts.update
 POST   /register                                        Accounts.register
 POST   /authenticate                                    Accounts.authenticate
+POST   /update/{memberId}                               Accounts.updateDetails
 GET    /logout                                          Accounts.logout
 
 

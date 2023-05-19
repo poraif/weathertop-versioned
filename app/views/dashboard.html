@@ -4,6 +4,7 @@
 #{menu id:"dashboard"/}
 
 <header class="title">
+    <br>
     ${member.firstname} ${member.lastname}'s stations
 </header>
 #{list items:stations, as:'station'}
@@ -11,6 +12,7 @@
   <h1 class="title">
     ${station.name}
   </h1>
+    #{latestReadings station:station /}
   <span class="icon">
       <a href="/stations/${station.id}">
   <i class="fas fa-folder">

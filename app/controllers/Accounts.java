@@ -16,12 +16,29 @@ public class Accounts extends Controller
         render("login.html");
     }
 
+    public static void update()
+    {
+        render("update.html");
+    }
+
 
     public static void register(String firstname, String lastname, String email, String password)
     {
         Logger.info("Registering new user " + email);
         Member member = new Member(firstname, lastname, email, password);
         member.save();
+        redirect("/");
+    }
+
+    public static void updateDetails(Long memberId, String firstname, String lastname, String password)
+    {
+        Member member = Member.findById(memberId);
+        member.setFirstName(firstname);
+        member.setLastName(lastname);
+        member.setPassword(password);
+        member.save();
+        String email = getLoggedInMember().email;
+        Logger.info("Updating user profile" + email);
         redirect("/");
     }
 
