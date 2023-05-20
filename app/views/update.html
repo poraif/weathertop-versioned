@@ -2,49 +2,51 @@
 #{set title:'Update profile' /}
 #{menu id:"update"/}
 <section class="content box">
-  <div class="columns">
-    <div class="column is-half">
-      <form action="/updatedetails" method="POST">
-        <h3 class="subtitle">Update Account Details</h3>
-        <div class="field is-horizontal field-body">
-          <div class="field">
-            <label class="label">First Name</label>
-            <p class="control is-expanded">
-              <input class="input" type="text" placeholder="${member.firstname}"  name="firstname" value=${member.firstname}">
-            </p>
-          </div>
-          <div class="field">
-            <label class="label">Last Name</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="${member.lastname}" name="lastname" value="${member.lastname}">
-            </p>
-          </div>
-        </div>
-        <fieldset disabled>
-        <div class="field">
-          <label class="label">Email</label>
-          <p class="control has-icons-left">
-            <input class="input" type="email" placeholder="User email cannot be changed" name="email">
-            <span class="icon is-small is-left">
+    <div class="columns">
+        <div class="column is-half">
+            <form action="/updatedetails" method="POST">
+                <h3 class="subtitle">Update Account Details</h3>
+                <div class="field is-horizontal field-body">
+                    <div class="field">
+                        <label class="label">First Name</label>
+                        <p class="control is-expanded">
+                            <input class="input" type="text" placeholder="${member.firstname}" name="firstname"
+                                   value=${member.firstname}>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Last Name</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="${member.lastname}" name="lastname"
+                                   value="${member.lastname}">
+                        </p>
+                    </div>
+                </div>
+                <fieldset disabled>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <p class="control has-icons-left">
+                            <input class="input" type="email" placeholder="User email cannot be changed" name="email">
+                            <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
-        </div>
-        </fieldset>
-        <div class="field">
-          <label class="label">Password</label>
-          <p class="control has-icons-left">
-            <input class="input" type="password" name="password" value="${member.password}">
-            <span class="icon is-small is-left">
+                    </div>
+                </fieldset>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" name="password" value="${member.password}">
+                        <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
             </span>
+                </div>
+                <button class="button is-link is-info">Confirm update</button>
+            </form>
         </div>
-        <button class="button is-link is-info">Confirm update</button>
-      </form>
+        <div class="column is-half">
+            <figure class="image is-square">
+                <img src="public/images/storm.jpg">
+            </figure>
+        </div>
     </div>
-    <div class="column is-half">
-      <figure class="image is-square">
-        <img src="public/images/about.jpg">
-      </figure>
-    </div>
-  </div>
 </section>
