@@ -63,11 +63,5 @@ public class Reading extends Model {
   }
 
 
-  public static double calcWindChill(double windSpeed, double temperature) {
-    double i = Math.pow(windSpeed, 0.16);
-    return (Math.round((13.12 + (0.6215 * temperature) - (11.37 * i) + ((0.3965 * temperature) * i)) * 100) / 100.0);
-  }
-
-
 }
 
