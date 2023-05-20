@@ -16,10 +16,12 @@ public class Accounts extends Controller
         render("login.html");
     }
 
-    public static void update()
-    {
-        render("update.html");
-    }
+
+        public static void update() {
+            Member member = Accounts.getLoggedInMember();
+            render("update.html", member);
+        }
+
 
 
     public static void register(String firstname, String lastname, String email, String password)
@@ -30,17 +32,18 @@ public class Accounts extends Controller
         redirect("/");
     }
 
-    public static void updateDetails(Long memberId, String firstname, String lastname, String password)
+    public static void updateDetails(String firstname, String lastname, String password)
     {
-        Member member = Member.findById(memberId);
-        member.setFirstName(firstname);
-        member.setLastName(lastname);
-        member.setPassword(password);
-        member.save();
-        String email = getLoggedInMember().email;
-        Logger.info("Updating user profile" + email);
-        redirect("/");
+        Member member = Accounts.getLoggedInMember();
+            member.firstname = firstname;
+            member.lastname = lastname;
+            member.password = password;
+            member.save();
+        Logger.info("Updating user " + getLoggedInMember().email);
+        render ("updatedetails.html", member);
+        redirect("/dashboard.html");
     }
+
 
     public static void authenticate(String email, String password)
     {

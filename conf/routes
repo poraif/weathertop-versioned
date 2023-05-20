@@ -14,9 +14,9 @@ POST    /dashboard/addstation                           Dashboard.addStation
 GET    /signup                                          Accounts.signup
 GET    /login                                           Accounts.login
 GET    /update                                          Accounts.update
+POST   /updatedetails                                   Accounts.updateDetails
 POST   /register                                        Accounts.register
 POST   /authenticate                                    Accounts.authenticate
-POST   /update/{memberId}                               Accounts.updateDetails
 GET    /logout                                          Accounts.logout
 
 

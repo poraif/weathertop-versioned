@@ -8,6 +8,7 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 import models.Member;
+import utils.stationAnalytics;
 
 public class Dashboard extends Controller {
   public static void index() {
